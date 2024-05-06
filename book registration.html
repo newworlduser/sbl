@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById("firstname").value.trim();
+            var lastName = document.getElementById("lastname").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var mobile = document.getElementById("mobile").value.trim();
+            var address = document.getElementById("address").value.trim();
+
+            // Check if any field is empty
+            if (firstName === "" || lastName === "" || email === "" || password === "" || mobile === "" || address === "") {
+                alert("All fields are required");
+                return false;
+            }
+
+            // Validate email
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid email address");
+                return false;
+            }
+
+            // Validate mobile number (assuming 10 digits)
+            var mobileRegex = /^\d{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                alert("Invalid mobile number");
+                return false;
+            }
+
+            // All validations passed
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Register for Online Bookstore</h1>
+    </header>
+    <section class="registration-form">
+        <form onsubmit="return validateForm()">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" required><br><br>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" required><br><br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea><br><br>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Online Bookstore. All rights reserved.</p>
+    </footer>
+</body>
+</html>

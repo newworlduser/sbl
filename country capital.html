@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Country Capitals</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #capital {
+        color: #3366cc; /* Change color as desired */
+        font-weight: bold;
+        font-size: 18px; /* Change font size as desired */
+    }
+</style>
+</head>
+<body>
+    <h2>Select a country:</h2>
+    <select id="countrySelect" onchange="showCapital()">
+        <option value="default">Select a country...</option>
+        <option value="usa">United States</option>
+        <option value="uk">United Kingdom</option>
+        <option value="france">France</option>
+        <option value="germany">Germany</option>
+        <!-- Add more countries as desired -->
+    </select>
+    <br><br>
+    <div id="capital"></div>
+
+    <script>
+        function showCapital() {
+            var selectBox = document.getElementById("countrySelect");
+            var capitalDisplay = document.getElementById("capital");
+            var selectedCountry = selectBox.options[selectBox.selectedIndex].value;
+            var capital = "";
+
+            switch(selectedCountry) {
+                case "usa":
+                    capital = "Washington, D.C.";
+                    break;
+                case "uk":
+                    capital = "London";
+                    break;
+                case "france":
+                    capital = "Paris";
+                    break;
+                case "germany":
+                    capital = "Berlin";
+                    break;
+                // Add more cases for other countries
+                default:
+                    capital = "";
+            }
+
+            capitalDisplay.innerHTML = capital;
+        }
+    </script>
+</body>
+</html>

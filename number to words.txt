@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number to Words Converter</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+    <h2>Number to Words Converter</h2>
+    <label for="numberInput">Enter a number (0-999): </label>
+    <input type="text" id="numberInput" maxlength="3" oninput="convertToWords()">
+    <div id="result"></div>
+
+    <script>
+        function convertToWords() {
+            var numberInput = document.getElementById("numberInput").value.trim();
+            var resultDisplay = document.getElementById("result");
+
+            // Validate input
+            if (!/^\d+$/.test(numberInput)) {
+                resultDisplay.textContent = "Please enter only digits (0-9).";
+                return;
+            }
+
+            var number = parseInt(numberInput, 10);
+            if (isNaN(number)) {
+                resultDisplay.textContent = "Please enter a valid number.";
+                return;
+            }
+
+            if (number < 0 || number > 999) {
+                resultDisplay.textContent = "Number must be between 0 and 999.";
+                return;
+            }
+
+            // Convert number to words
+            var ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+            var tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+            var teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+
+            var words = "";
+
+            if (number === 0) {
+                words = "zero";
+            } else {
+                var hundredsDigit = Math.floor(number / 100);
+                var tensDigit = Math.floor((number % 100) / 10);
+                var onesDigit = number % 10;
+
+                if (hundredsDigit > 0) {
+                    words += ones[hundredsDigit] + " hundred ";
+                }
+
+                if (tensDigit === 1) {
+                    words += teens[onesDigit];
+                } else {
+                    words += tens[tensDigit] + " " + ones[onesDigit];
+                }
+            }
+
+            resultDisplay.textContent = words.trim();
+        }
+    </script>
+</body>
+</html>

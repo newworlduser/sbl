@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions Demo</title>
+</head>
+<body>
+    <button onclick="displayDate()">Display Date</button><br><br>
+    <button onclick="calculateFactorial()">Factorial of Number</button><br><br>
+    <button onclick="displayMultiplicationTable()">Multiplication Table</button><br><br>
+    <button onclick="displaySumOfNumbers()">Sum of Numbers</button><br><br>
+
+    <script>
+        // Function to display the current date
+        function displayDate() {
+            var currentDate = new Date().toDateString();
+            alert("Current Date: " + currentDate);
+        }
+
+        // Function to calculate factorial of a number
+        function calculateFactorial() {
+            var n = prompt("Enter a number:");
+            n = parseInt(n);
+
+            if (isNaN(n)) {
+                alert("Invalid input. Please enter a valid number.");
+                return;
+            }
+
+            var factorial = 1;
+            for (var i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+            alert("Factorial of " + n + " is: " + factorial);
+        }
+
+        // Function to display multiplication table of a number
+        function displayMultiplicationTable() {
+            var n = prompt("Enter a number:");
+            n = parseInt(n);
+
+            if (isNaN(n)) {
+                alert("Invalid input. Please enter a valid number.");
+                return;
+            }
+
+            var table = "";
+            for (var i = 1; i <= 10; i++) {
+                table += n + " x " + i + " = " + (n * i) + "\n";
+            }
+            alert("Multiplication Table of " + n + ":\n\n" + table);
+        }
+
+        // Function to display sum of numbers from 1 to n
+        function displaySumOfNumbers() {
+            var n = prompt("Enter a number:");
+            n = parseInt(n);
+
+            if (isNaN(n)) {
+                alert("Invalid input. Please enter a valid number.");
+                return;
+            }
+
+            var sum = (n * (n + 1)) / 2;
+            alert("Sum of numbers from 1 to " + n + " is: " + sum);
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions Demo</title>
+</head>
+<body>
+    <button onclick="displayDate()">Display Date</button><br><br>
+    <button onclick="calculateFactorial()">Factorial of Number</button><br><br>
+    <button onclick="displayMultiplicationTable()">Multiplication Table</button><br><br>
+    <button onclick="displaySumOfNumbers()">Sum of Numbers</button><br><br>
+
+    <script>
+        // Function to display the current date
+        function displayDate() {
+            var currentDate = new Date().toDateString();
+            alert("Current Date: " + currentDate);
+        }
+
+        // Function to calculate factorial of a number
+        function calculateFactorial() {
+            var n = prompt("Enter a number:");
+            n = parseInt(n);
+
+            if (isNaN(n)) {
+                alert("Invalid input. Please enter a valid number.");
+                return;
+            }
+
+            var factorial = 1;
+            for (var i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+            alert("Factorial of " + n + " is: " + factorial);
+        }
+
+        // Function to display multiplication table of a number
+        function displayMultiplicationTable() {
+            var n = prompt("Enter a number:");
+            n = parseInt(n);
+
+            if (isNaN(n)) {
+                alert("Invalid input. Please enter a valid number.");
+                return;
+            }
+
+            var table = "";
+            for (var i = 1; i <= 10; i++) {
+                table += n + " x " + i + " = " + (n * i) + "\n";
+            }
+            alert("Multiplication Table of " + n + ":\n\n" + table);
+        }
+
+        // Function to display sum of numbers from 1 to n
+        function displaySumOfNumbers() {
+            var n = prompt("Enter a number:");
+            n = parseInt(n);
+
+            if (isNaN(n)) {
+                alert("Invalid input. Please enter a valid number.");
+                return;
+            }
+
+            var sum = (n * (n + 1)) / 2;
+            alert("Sum of numbers from 1 to " + n + " is: " + sum);
+        }
+    </script>
+</body>
+</html>
